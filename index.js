@@ -175,9 +175,14 @@ Use the filterByWord function below to do the following:
     DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
 
-function filterByWord(arr, ){
-    /*your code here*/
-}
+function filterByWord(arr, string){
+    let filteredArr = [];
+    for(let i = 0; i < arr.length; i++){
+        if(arr[i].includes(string)){
+            filteredArr.push(arr[i]);
+        };
+    } return filteredArr;
+};
 
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
@@ -192,8 +197,17 @@ Use the getAverageWordLength function below to do the following:
     For example: getAverageWordLength(originalFlavors) should return a number between 0 and 3.     
 */
 
-function getAverageWordLength(/*code here*/){
-    /*code here*/
+
+function getAverageWordLength(arr){
+    let wordCount = 0;
+    let stringByWord = []
+    
+    for(let i = 0; i < arr.length; i++){
+        stringByWord = arr[i].split(" ");
+        wordCount = wordCount + stringByWord.length;
+    };
+
+    return wordCount / arr.length;
 }
 
 
@@ -202,7 +216,7 @@ Baskin Robins now offers new flavors, seasonal flavors, and even regional flavor
 from originalFlavors, currentFlavors, seasonalFlavors, and regionalFlavors and store it in an array called randomFlavors.
 
 Use the getRandomFlavors function and new arrays below to do the following:
-    1. Receive the four arrays with all the differnet flavors (originalFlavors is above, the others are below)
+    1. Receive the four arrays with all the different flavors (originalFlavors is above, the others are below)
     2. Randomly pick flavors from all four arrays
     3. Return a new array called randomFlavors that has a lenght of 31
 
