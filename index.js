@@ -224,9 +224,19 @@ Use the getRandomFlavors function and new arrays below to do the following:
 */
 
 
-function getRandomFlavors(/*code here*/){
-    /*code here*/
-}
+function getRandomFlavors(arr1, arr2, arr3, arr4){
+    let combArr = arr1.concat(arr2, arr3, arr4); /*create new array full of all other arrays*/
+  // console.log(combArr)
+    let newArr = [];
+    for(let i = 0; i < 31; i++){
+        let index = Math.floor(Math.random() * combArr.length)
+        newArr.push(combArr[index]);
+        combArr.splice(index, 1);
+    };
+return newArr
+};
+
+getRandomFlavors(newFlavors, regionalFlavors, seasonalFlavors, originalFlavors);
 
 // NEW DATA ARRAYS FOR STRETCH 2 ⬇️
 const newFlavors = [
